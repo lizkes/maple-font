@@ -514,6 +514,8 @@ class FontConfig:
             name_arr.append("NL")
         if self.debug:
             name_arr.append("Debug")
+        if self.cn["narrow"]:
+            name_arr.append("Narrow")
         self.family_name = " ".join(name_arr)
         self.family_name_compact = "".join(name_arr)
 

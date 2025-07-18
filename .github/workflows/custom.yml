@@ -31,12 +31,12 @@ on:
       feat:
         description: 'Enable features, split by `,`, e.g. "cv01,ss02" (add "--feat feat1,feat2" to build args)'
         required: false
-        default: ''
+        default: ""
         type: string
       build_args:
-        description: 'Other args for build.py'
+        description: "Other args for build.py"
         required: false
-        default: ''
+        default: ""
         type: string
 
 permissions:
@@ -53,9 +53,9 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
-          cache: 'pip'
-          cache-dependency-path: './requirements.txt'
+          python-version: "3.12"
+          cache: "pip"
+          cache-dependency-path: "./requirements.txt"
 
       - name: Install dependencies
         run: |
