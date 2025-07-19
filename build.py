@@ -507,15 +507,15 @@ class FontConfig:
             self.cn["clean_cache"] = True
             self.cn["use_static_base_font"] = False
 
-        name_arr = [word.capitalize() for word in self.family_name.split(" ")]
+        # build family name
+        base_family = "Maple Alt" if self.cn["narrow"] else self.family_name
+        name_arr = [word.capitalize() for word in base_family.split(" ")]
         if self.use_normal_preset:
             name_arr.append("Normal")
         if not self.enable_liga:
             name_arr.append("NL")
         if self.debug:
             name_arr.append("Debug")
-        if self.cn["narrow"]:
-            name_arr.append("Narrow")
         self.family_name = " ".join(name_arr)
         self.family_name_compact = "".join(name_arr)
 
